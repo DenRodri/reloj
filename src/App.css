@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
-}
+/* <div className="clock">
+      <div className="screen">
+        <h1 className="time">{time}</h1>
+        
+      </div>
+    </div> */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+body{
+  background: #1a1a1a;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+h1{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4em;
+  font-weight: 500;
+  color: #16cc86
+}
+.clock .screen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.clock {
+
+  background: #0b0d0e;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.screen{
+  width: 23em;
+  height: 10em;
+  border: 4px solid #000;
+  border-radius: 15px;
+  background: linear-gradient(
+    -45deg, #1f272b 0%,
+    #1f272b 50%,
+    #1b1f21 50%,
+    #1b1f21 100%
+  );
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  width: 5em;
+  border: 4px solid #000;
+  border-radius: 15px;
+  background-color:aqua;
+  font-size: 2em;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.image{
+  margin-left: 4.6vw;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(clock.png);
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05 ),
+              inset 0 -15px 15px rgba(255, 255, 255, 0.05 ),
+              0 15px 15px rgba(255, 255, 255, 0.3 ),
+              inset 0 -15px 15px rgba(255, 255, 255, 0.3 )
+}
+
+.image:before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+}
+.image .hour,
+.image .min,
+.image .sec{
+  position: absolute;
+}
+
+.image .hour, .hr{
+  width: 160px; 
+  height: 160px;
+}
+
+.image .min, .mn{
+  width: 190px;
+  height: 190px;
+}
+
+.image .sec, .sc{
+  width: 230px;
+  height: 230px;
+}
+
+.hr, .mn, .sc{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0; 
+}
+
+.mn:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+.sc:before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
 }
